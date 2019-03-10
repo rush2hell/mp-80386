@@ -1,0 +1,13 @@
+code segment
+start:assume cs:code
+	mov ah,06h
+	mov al,00h
+	mov bh,61h
+	mov cx,0505h
+	mov dx,1530
+	int 10h
+	mov ah,02h
+	mov al,00h
+	int 21h
+code ends
+end start

@@ -1,0 +1,20 @@
+data segment
+er_msg db 'error$'
+data ends
+code segment
+start:assume cs:code,ds:data
+	  mov ax,data
+	  mov ds,ax
+	  mov ah,57h
+	  mov al,00h
+	  mov ah,20h
+	  mov cx,2017
+	  mov al,06h
+	  mov dh,3
+	  mov dl,5
+	  int 21h
+	  jnc quit
+	  quit:mov ah,4ch
+	  	   int 21h
+code ends
+end start
